@@ -10,6 +10,8 @@ the truck will reach and when it gets there, and recommends the safest route, ba
 
 The demo runs on Render's free tier, so the server sleeps when idle and the first request can take about a minute.
 
+![RouteRisk demo: planning a trip from Chicago to Denver](docs/routerisk-demo.gif)
+
 > **Proof of concept, not a safety system.** Routes, forecasts and risk levels are estimates. Always follow official
 > road and weather advisories.
 
@@ -54,6 +56,7 @@ All external services are free and need no API keys.
 │   │   ├── api.js         backend and Photon calls
 │   │   └── display.js     risk colours, labels, formatting
 │   └── package.json
+├── docs/                  README images (demo GIF)
 └── render.yaml            Render deployment (both services)
 ```
 
