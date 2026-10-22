@@ -3,6 +3,13 @@
 Weather-aware truck routing. Enter a trip and RouteRisk finds up to three routes, checks the forecast at each point
 the truck will reach and when it gets there, and recommends the safest route, balancing weather risk against travel time.
 
+## Live demo
+
+- **App:** https://routerisk-web.onrender.com
+- **API health check:** https://routerisk-api.onrender.com/api/health
+
+The demo runs on Render's free tier, so the server sleeps when idle and the first request can take about a minute.
+
 > **Proof of concept, not a safety system.** Routes, forecasts and risk levels are estimates. Always follow official
 > road and weather advisories.
 
