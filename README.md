@@ -22,7 +22,7 @@ the truck will reach and when it gets there, and recommends the safest route, ba
 | Frontend   | React 19, Vite, Material UI, Leaflet / React-Leaflet   |
 | Routing    | [Valhalla](https://valhalla.github.io/valhalla/)       |
 | Weather    | [Open-Meteo](https://open-meteo.com)                   |
-| Geocoding  | [Nominatim](https://nominatim.org)                     |
+| Geocoding  | [Photon](https://photon.komoot.io)                     |
 | Type-ahead | [Photon](https://photon.komoot.io)                     |
 | Map tiles  | [OpenStreetMap](https://www.openstreetmap.org)         |
 
@@ -35,7 +35,7 @@ All external services are free and need no API keys.
 ├── backend/               Django API
 │   ├── core/              settings, URLs, WSGI
 │   ├── trips/
-│   │   ├── clients/       calls to Valhalla, Open-Meteo, Nominatim
+│   │   ├── clients/       calls to Valhalla, Open-Meteo, Photon
 │   │   ├── engine/        pure logic: checkpoints, risk, ranking, heatmap
 │   │   ├── tests/         risk boundary tests
 │   │   ├── pipeline.py    plans a trip from start to finish
@@ -105,7 +105,7 @@ Free Render services sleep after 15 minutes idle, so the first request can take 
 
 `origin` and `destination` each take either a place name or coordinates.
 
-With place names (geocoded on the server with Nominatim):
+With place names (looked up on the server with Photon):
 
 ```json
 {
@@ -157,10 +157,9 @@ scale (Low 1 … No Travel 5) and compared in 0.05 steps; miles are compared rou
 
 RouteRisk uses free, open services. Please respect their terms if you run your own copy.
 
-| Service                                        | Used for               | Usage policy                                                                    |
-| ---------------------------------------------- | ---------------------- | ------------------------------------------------------------------------------- |
-| [Open-Meteo](https://open-meteo.com)           | weather forecasts      | [Terms](https://open-meteo.com/en/terms), non-commercial                        |
-| [Valhalla](https://valhalla.openstreetmap.de)  | routes                 | fair use                                                                        |
-| [Nominatim](https://nominatim.org)             | place name lookup      | [Policy](https://operations.osmfoundation.org/policies/nominatim/), 1 request/s |
-| [Photon](https://photon.komoot.io)             | type-ahead suggestions | fair use                                                                        |
-| [OpenStreetMap](https://www.openstreetmap.org) | map tiles              | [Policy](https://operations.osmfoundation.org/policies/tiles/)                  |
+| Service                                        | Used for                                     | Usage policy                                                   |
+| ---------------------------------------------- | -------------------------------------------- | -------------------------------------------------------------- |
+| [Open-Meteo](https://open-meteo.com)           | weather forecasts                            | [Terms](https://open-meteo.com/en/terms), non-commercial       |
+| [Valhalla](https://valhalla.openstreetmap.de)  | routes                                       | fair use                                                       |
+| [Photon](https://photon.komoot.io)             | place name lookup and type-ahead suggestions | fair use                                                       |
+| [OpenStreetMap](https://www.openstreetmap.org) | map tiles                                    | [Policy](https://operations.osmfoundation.org/policies/tiles/) |
